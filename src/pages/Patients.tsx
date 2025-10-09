@@ -100,7 +100,7 @@ export default function Patients() {
             </div>
             <Button variant="outline">
               <Filter className="mr-2 h-4 w-4" />
-              Filter
+             {t('patientPage.mainBody.button')}
             </Button>
           </div>
 
@@ -138,9 +138,9 @@ export default function Patients() {
                           </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
-                          <DropdownMenuItem>View Profile</DropdownMenuItem>
-                          <DropdownMenuItem>Edit</DropdownMenuItem>
-                          <DropdownMenuItem>Block</DropdownMenuItem>
+                          <DropdownMenuItem>{t('patientPage.dropdownMenu.viewProfile')}</DropdownMenuItem>
+                          <DropdownMenuItem>{t('patientPage.dropdownMenu.editDetails')}</DropdownMenuItem>
+                          <DropdownMenuItem>{t('patientPage.dropdownMenu.deactivate')}</DropdownMenuItem>
                         </DropdownMenuContent>
                       </DropdownMenu>
                     </TableCell>

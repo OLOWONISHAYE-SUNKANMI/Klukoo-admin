@@ -19,6 +19,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useTranslation } from 'react-i18next';
+
+
 
 const appointments = [
   {
@@ -69,6 +72,7 @@ const appointments = [
 ];
 
 export default function Appointments() {
+  const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
 
@@ -76,37 +80,37 @@ export default function Appointments() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-foreground">Appointments</h1>
-          <p className="text-muted-foreground">View and manage all appointments</p>
+          <h1 className="text-3xl font-bold text-foreground">{t('appointmentPage.header.title')}</h1>
+          <p className="text-muted-foreground">{t('appointmentPage.header.subtitle')}</p>
         </div>
         <Button>
           <CalendarIcon className="mr-2 h-4 w-4" />
-          Schedule Appointment
+         {t('appointmentPage.header.button')}
         </Button>
       </div>
 
       <div className="grid gap-6 md:grid-cols-4">
         <Card>
           <CardContent className="pt-6">
-            <p className="text-sm text-muted-foreground">Today</p>
+            <p className="text-sm text-muted-foreground">{t('appointmentPage.mainBody.today')}</p>
             <p className="mt-1 text-2xl font-bold">32</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
-            <p className="text-sm text-muted-foreground">Confirmed</p>
+            <p className="text-sm text-muted-foreground">{t('appointmentPage.mainBody.confirmed')}</p>
             <p className="mt-1 text-2xl font-bold">24</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
-            <p className="text-sm text-muted-foreground">Pending</p>
+            <p className="text-sm text-muted-foreground">{t('appointmentPage.mainBody.pending')}</p>
             <p className="mt-1 text-2xl font-bold">5</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
-            <p className="text-sm text-muted-foreground">Completed</p>
+            <p className="text-sm text-muted-foreground">{t('appointmentPage.mainBody.completed')}</p>
             <p className="mt-1 text-2xl font-bold">3</p>
           </CardContent>
         </Card>
