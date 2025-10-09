@@ -9,6 +9,7 @@ import {
   ResponsiveContainer,
   Legend,
 } from "recharts";
+import { useTranslation } from 'react-i18next';
 
 const data = [
   { month: "Jan", revenue: 12000, appointments: 45 },
@@ -20,10 +21,13 @@ const data = [
 ];
 
 export function RevenueChart() {
+
+    const { t } = useTranslation();
+
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Revenue & Appointments Overview</CardTitle>
+        <CardTitle>{t('dashboardPage.revenueChart.title')}</CardTitle>
       </CardHeader>
       <CardContent>
         <ResponsiveContainer width="100%" height={300}>
@@ -44,14 +48,14 @@ export function RevenueChart() {
               dataKey="revenue"
               stroke="hsl(var(--primary))"
               strokeWidth={2}
-              name="Revenue ($)"
+              name={t('dashboardPage.revenueChart.xAxisName1')}
             />
             <Line
               type="monotone"
               dataKey="appointments"
               stroke="hsl(var(--success))"
               strokeWidth={2}
-              name="Appointments"
+              name={t('dashboardPage.revenueChart.xAxisName2')}
             />
           </LineChart>
         </ResponsiveContainer>
