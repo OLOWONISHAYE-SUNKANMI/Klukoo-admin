@@ -22,63 +22,70 @@ import {
   SidebarMenuItem,
   SidebarHeader,
 } from "@/components/ui/sidebar";
+import { useTranslation } from 'react-i18next';
 
-const menuItems = [
+
+  
+
+export function AdminSidebar() {
+
+    const { t } = useTranslation();
+ 
+      
+  const menuItems = [
   {
-    title: "Dashboard",
+    title: t('adminSiderbar.dashboard'),
     icon: LayoutDashboard,
     url: "/",
   },
   {
-    title: "Patients",
+    title: t('adminSiderbar.patients'),
     icon: Users,
     url: "/patients",
   },
   {
-    title: "Doctors",
+    title: t('adminSiderbar.doctors'),
     icon: Stethoscope,
     url: "/doctors",
   },
   {
-    title: "Appointments",
+    title: t('adminSiderbar.appointments'),
     icon: Calendar,
     url: "/appointments",
   },
   {
-    title: "Payments",
+    title: t('adminSiderbar.payments'),
     icon: CreditCard,
     url: "/payments",
   },
   {
-    title: "Content",
+    title: t('adminSiderbar.content'),
     icon: FileText,
     url: "/content",
   },
   {
-    title: "Reports",
+    title: t('adminSiderbar.reports'),
     icon: BarChart3,
     url: "/reports",
   },
   {
-    title: "Notifications",
+    title: t('adminSiderbar.notifications'),
     icon: Bell,
     url: "/notifications",
   },
   {
-    title: "Settings",
+    title: t('adminSiderbar.settings'),
     icon: Settings,
     url: "/settings",
   },
 ];
 
-export function AdminSidebar() {
   return (
     <Sidebar>
       <SidebarHeader className="p-6">
         <div className="flex items-center gap-2">
-          <HeartPulse className="h-8 w-8 text-sidebar-primary" />
           <div>
-            <h2 className="text-lg font-bold text-sidebar-foreground">Klukoo</h2>
+            <h2 className="text-xl text-[36px] mb-5 font-bold text-sidebar-foreground">Klukoo</h2>
             <p className="text-xs text-sidebar-foreground/70">Admin Dashboard</p>
           </div>
         </div>
