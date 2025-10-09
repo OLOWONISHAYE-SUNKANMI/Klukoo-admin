@@ -22,56 +22,64 @@ import {
   SidebarMenuItem,
   SidebarHeader,
 } from "@/components/ui/sidebar";
+import { useTranslation } from 'react-i18next';
 
-const menuItems = [
+
+  
+
+export function AdminSidebar() {
+
+    const { t } = useTranslation();
+ 
+      
+  const menuItems = [
   {
-    title: "Dashboard",
+    title: t('adminSiderbar.dashboard'),
     icon: LayoutDashboard,
     url: "/",
   },
   {
-    title: "Patients",
+    title: t('adminSiderbar.patients'),
     icon: Users,
     url: "/patients",
   },
   {
-    title: "Doctors",
+    title: t('adminSiderbar.doctors'),
     icon: Stethoscope,
     url: "/doctors",
   },
   {
-    title: "Appointments",
+    title: t('adminSiderbar.appointments'),
     icon: Calendar,
     url: "/appointments",
   },
   {
-    title: "Payments",
+    title: t('adminSiderbar.payments'),
     icon: CreditCard,
     url: "/payments",
   },
   {
-    title: "Content",
+    title: t('adminSiderbar.content'),
     icon: FileText,
     url: "/content",
   },
   {
-    title: "Reports",
+    title: t('adminSiderbar.reports'),
     icon: BarChart3,
     url: "/reports",
   },
   {
-    title: "Notifications",
+    title: t('adminSiderbar.notifications'),
     icon: Bell,
     url: "/notifications",
   },
   {
-    title: "Settings",
+    title: t('adminSiderbar.settings'),
     icon: Settings,
     url: "/settings",
   },
 ];
 
-export function AdminSidebar() {
   return (
     <Sidebar>
       <SidebarHeader className="p-6">

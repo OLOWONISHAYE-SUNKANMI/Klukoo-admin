@@ -10,10 +10,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Badge } from "@/components/ui/badge";
 import LanguageToggle from '@/components/ui/LanguageToggle';
+import { useTranslation } from 'react-i18next';
 import { SidebarTrigger } from "@/components/ui/sidebar";
 
 
 export function AdminHeader() {
+
+    const { t } = useTranslation();
+ 
   return (
     <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-card px-6 shadow-sm">
       <SidebarTrigger />
@@ -27,23 +31,23 @@ export function AdminHeader() {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-80">
-          <DropdownMenuLabel>Notifications</DropdownMenuLabel>
+          <DropdownMenuLabel>{t('adminHeader.notification')}</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem>
             <div className="flex flex-col gap-1">
-              <p className="font-medium">New appointment request</p>
+              <p className="font-medium">{t('adminHeader.requests')}</p>
               <p className="text-sm text-muted-foreground">Dr. Smith has a new booking</p>
             </div>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <div className="flex flex-col gap-1">
-              <p className="font-medium">Payment received</p>
+              <p className="font-medium">{t('adminHeader.paymentStatus')}</p>
               <p className="text-sm text-muted-foreground">$150 from Patient John Doe</p>
             </div>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <div className="flex flex-col gap-1">
-              <p className="font-medium">New doctor application</p>
+              <p className="font-medium">{t('adminHeader.doctorApplication')}</p>
               <p className="text-sm text-muted-foreground">Dr. Sarah Johnson applied</p>
             </div>
           </DropdownMenuItem>
