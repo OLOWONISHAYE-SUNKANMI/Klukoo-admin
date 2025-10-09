@@ -76,9 +76,8 @@ export function AdminSidebar() {
     <Sidebar>
       <SidebarHeader className="p-6">
         <div className="flex items-center gap-2">
-          <HeartPulse className="h-8 w-8 text-sidebar-primary" />
           <div>
-            <h2 className="text-lg font-bold text-sidebar-foreground">Klukoo</h2>
+            <h2 className="text-xl text-[36px] mb-5 font-bold text-sidebar-foreground">Klukoo</h2>
             <p className="text-xs text-sidebar-foreground/70">Admin Dashboard</p>
           </div>
         </div>

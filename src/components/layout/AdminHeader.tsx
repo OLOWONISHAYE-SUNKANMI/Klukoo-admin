@@ -9,21 +9,21 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Badge } from "@/components/ui/badge";
+import LanguageToggle from '@/components/ui/LanguageToggle';
 import { SidebarTrigger } from "@/components/ui/sidebar";
+
 
 export function AdminHeader() {
   return (
     <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-card px-6 shadow-sm">
       <SidebarTrigger />
       <div className="flex-1" />
-      
+       
+          <LanguageToggle className="mr-4"/>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" size="icon" className="relative">
             <Bell className="h-5 w-5" />
-            <Badge className="absolute -right-1 -top-1 h-5 w-5 rounded-full p-0 text-xs">
-              3
-            </Badge>
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-80">
