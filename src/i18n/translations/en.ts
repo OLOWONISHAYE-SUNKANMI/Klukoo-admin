@@ -9,7 +9,14 @@ export const en = {
   appSlogan:
     'The first smart application in Africa that helps diabetic patients live better, anticipate better, and respond better.',
 
+
+    //Admin Dashbboard Title
+    AdminDashboard: {
+      title: 'Admin Dashboard',
+      menu: 'Menu',
+    },
     // Admin Header 
+
     adminHeader: {
     notifications: 'Notifications',
     requests: 'New appointment requests',

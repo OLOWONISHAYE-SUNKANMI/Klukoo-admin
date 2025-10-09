@@ -86,13 +86,13 @@ export function AdminSidebar() {
         <div className="flex items-center gap-2">
           <div>
             <h2 className="text-xl text-[36px] mb-5 font-bold text-sidebar-foreground">Klukoo</h2>
-            <p className="text-xs text-sidebar-foreground/70">Admin Dashboard</p>
+            <p className="text-xs text-sidebar-foreground/70">{t('AdminDashboard.title')}</p>
           </div>
         </div>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className="text-sidebar-foreground/70">Menu</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-sidebar-foreground/70">{t('AdminDashboard.menu')}</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {menuItems.map((item) => (

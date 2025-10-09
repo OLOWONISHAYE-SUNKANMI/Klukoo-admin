@@ -5,7 +5,12 @@ export const fr = {
   appSlogan:
     'La première application intelligente en Afrique qui aide les patients diabétiques à mieux vivre, mieux anticiper et mieux réagir.',
 
-  // Admin Header
+    //Admin Dashbboard Title 
+    AdminDashboard: {
+      title: 'Tableau de bord administrateur',
+      menu: 'Menu',
+    },
+
    // Admin Header 
     adminHeader: {
     notifications: 'Notifications',
