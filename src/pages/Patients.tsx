@@ -18,8 +18,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useTranslation } from 'react-i18next';
 
 const patients = [
+
+
   {
     id: 1,
     name: "John Doe",
@@ -58,32 +61,38 @@ const patients = [
   },
 ];
 
+
+
 export default function Patients() {
+
+   const { t } = useTranslation()
   const [searchQuery, setSearchQuery] = useState("");
+
+ 
 
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-foreground">Patient Management</h1>
-          <p className="text-muted-foreground">View and manage all registered patients</p>
+          <h1 className="text-3xl font-bold text-foreground">{t('patientPage.header.title')}</h1>
+          <p className="text-muted-foreground">{t('patientPage.header.subtitle')}</p>
         </div>
         <Button>
           <UserPlus className="mr-2 h-4 w-4" />
-          Add Patient
+          {t('patientPage.header.button')}
         </Button>
       </div>
 
       <Card>
         <CardHeader>
-          <CardTitle>All Patients</CardTitle>
+          <CardTitle>{t('patientPage.mainBody.title')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="mb-4 flex gap-4">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
-                placeholder="Search patients..."
+                placeholder={t('patientPage.mainBody.searchPlaceholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-10"
@@ -99,13 +108,13 @@ export default function Patients() {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Name</TableHead>
-                  <TableHead>Email</TableHead>
-                  <TableHead>Phone</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead>Last Visit</TableHead>
-                  <TableHead>Appointments</TableHead>
-                  <TableHead className="text-right">Actions</TableHead>
+                  <TableHead>{t('patientPage.tableHead.name')}</TableHead>
+                  <TableHead>{t('patientPage.tableHead.email')}</TableHead>
+                  <TableHead>{t('patientPage.tableHead.phone')}</TableHead>
+                  <TableHead>{t('patientPage.tableHead.status')}</TableHead>
+                  <TableHead>{t('patientPage.tableHead.lastVisit')}</TableHead>
+                  <TableHead>{t('patientPage.tableHead.lastVisit')}</TableHead>
+                  <TableHead className="text-right">{t('patientPage.tableHead.actions')}</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>

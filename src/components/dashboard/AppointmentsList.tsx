@@ -2,39 +2,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Clock } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
-const recentAppointments = [
-  {
-    id: 1,
-    patient: "John Doe",
-    doctor: "Dr. Smith",
-    time: "10:00 AM",
-    status: "confirmed",
-  },
-  {
-    id: 2,
-    patient: "Jane Wilson",
-    doctor: "Dr. Johnson",
-    time: "11:30 AM",
-    status: "pending",
-  },
-  {
-    id: 3,
-    patient: "Mike Brown",
-    doctor: "Dr. Davis",
-    time: "2:00 PM",
-    status: "confirmed",
-  },
-  {
-    id: 4,
-    patient: "Sarah Lee",
-    doctor: "Dr. Martinez",
-    time: "3:30 PM",
-    status: "completed",
-  },
-];
+
 
 export function AppointmentsList() {
+
+    const { t } = useTranslation();
+
   const getStatusVariant = (status: string) => {
     switch (status) {
       case "confirmed":
@@ -48,10 +23,43 @@ export function AppointmentsList() {
     }
   };
 
+
+
+  const recentAppointments = [
+  {
+    id: 1,
+    patient: "John Doe",
+    doctor: "Dr. Smith",
+    time: "10:00 AM",
+    status: t('dashboardPage.appointmentList.status.confirmed'),
+  },
+  {
+    id: 2,
+    patient: "Jane Wilson",
+    doctor: "Dr. Johnson",
+    time: "11:30 AM",
+    status: t('dashboardPage.appointmentList.status.pending'),
+  },
+  {
+    id: 3,
+    patient: "Mike Brown",
+    doctor: "Dr. Davis",
+    time: "2:00 PM",
+    status: t('dashboardPage.appointmentList.status.confirmed'),
+  },
+  {
+    id: 4,
+    patient: "Sarah Lee",
+    doctor: "Dr. Martinez",
+    time: "3:30 PM",
+    status: t('dashboardPage.appointmentList.status.completed'),
+  },
+];
+
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Today's Appointments</CardTitle>
+        <CardTitle>{t('dashboardPage.appointmentList.title')}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
