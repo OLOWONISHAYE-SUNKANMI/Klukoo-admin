@@ -171,7 +171,16 @@ export const fr = {
           markCompleted: 'Marquer comme terminé',
       },
     
-       
-    
     },
+
+      // Admin Sign in Page 
+      signInPage: {
+        title: 'Connectez-vous à votre compte',
+        email: 'Adresse email',
+        password: 'Mot de passe',
+        button: 'Se connecter',
+        response: 'Connexion en cours...',
+        welcome: 'Bienvenue à',
+        klukoo: 'Panneau d\'administration de Klukoo'
+  },
  };

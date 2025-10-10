@@ -6,8 +6,12 @@ import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { supabase } from "@/lib/SupabaseClient";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
+import LanguageToggle from "@/components/ui/LanguageToggle";
+
 
 const Login = () => {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -57,14 +61,17 @@ const Login = () => {
       <div className="flex flex-1 items-center justify-center bg-white p-8">
         <Card className="w-full max-w-md border-0 shadow-none">
           <div className="space-y-6">
+
+              <LanguageToggle className="mr-4" /> 
+
             <div>
-              <h1 className="text-3xl font-bold text-foreground">Sign in</h1>
+              <h1 className="text-3xl font-bold text-foreground">{t('signInPage.title')}</h1>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-sm text-muted-foreground">
-                  Email address
+                  {t('signInPage.email')}
                 </Label>
                 <Input
                   id="email"
@@ -79,7 +86,7 @@ const Login = () => {
 
               <div className="space-y-2">
                 <Label htmlFor="password" className="text-sm text-muted-foreground">
-                  Password
+                  {t('signInPage.password')}
                 </Label>
                 <div className="relative">
                   <Input
@@ -115,7 +122,7 @@ const Login = () => {
                 size="lg"
                 disabled={loading}
               >
-                {loading ? "Signing in..." : "Sign in"}
+                {loading ? t('signInPage.response') : t('signInPage.button')}
               </Button>
             </form>
           </div>
@@ -126,7 +133,7 @@ const Login = () => {
       <div className="hidden lg:flex flex-1 items-center justify-center bg-primary p-8">
         <div className="text-center space-y-8">
           <h2 className="text-4xl font-bold text-white">
-            Welcome to <span className="text-white">Klukoo Admin Panel</span>
+            {t('signInPage.welcome')} <span className="text-white">{t('signInPage.klukoo')}</span>
           </h2>
           <div className="flex items-center justify-center">
             <div className="backdrop-blur-sm flex items-center justify-center">
