@@ -62,7 +62,7 @@ const App = () => (
                       <AdminHeader />
                       <main className="flex-1 bg-background p-6">
                         <Routes>
-                          <Route path="/dashboard" element={<Dashboard />} />
+                          <Route path="/" element={<Dashboard />} />
                           <Route path="/patients" element={<Patients />} />
                           <Route path="/doctors" element={<Doctors />} />
                           <Route path="/appointments" element={<Appointments />} />

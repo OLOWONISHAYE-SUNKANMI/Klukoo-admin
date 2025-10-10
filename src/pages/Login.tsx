@@ -43,7 +43,7 @@ const Login = () => {
       // Success - go to dashboard
       localStorage.setItem("isLoggedIn", "true");
       setLoading(false);
-      navigate("/dashboard");
+      navigate("/");
     } catch (err) {
       console.error(err);
       setError("An unexpected error occurred");
