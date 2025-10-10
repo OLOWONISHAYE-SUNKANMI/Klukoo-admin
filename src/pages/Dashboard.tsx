@@ -1,4 +1,5 @@
 import { Users, Stethoscope, Calendar, DollarSign, AlertCircle, TrendingUp } from "lucide-react";
+import ProtectedRoute from "@/components/ProtectedRoute";
 import { StatCard } from "@/components/dashboard/StatCard";
 import { RevenueChart } from "@/components/dashboard/RevenueChart";
 import { AppointmentsList } from "@/components/dashboard/AppointmentsList";
@@ -9,6 +10,7 @@ export default function Dashboard() {
 
     const { t } = useTranslation()
   return (
+    <ProtectedRoute>
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold text-foreground">{t('dashboardPage.title')}</h1>
@@ -71,5 +73,6 @@ export default function Dashboard() {
           <AppointmentsList />
         </div>
     </div>
+    </ProtectedRoute>
   );
 }
