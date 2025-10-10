@@ -9,7 +9,9 @@ import { AdminHeader } from "@/components/layout/AdminHeader";
 import Dashboard from "./pages/Dashboard";
 import Patients from "./pages/Patients";
 import Doctors from "./pages/Doctors";
+import Payment from "./pages/Payments";
 import Appointments from "./pages/Appointments";
+import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
@@ -32,10 +34,8 @@ const App = () => (
                   <Route path="/patients" element={<Patients />} />
                   <Route path="/doctors" element={<Doctors />} />
                   <Route path="/appointments" element={<Appointments />} />
-                  <Route path="/payments" element={<div className="text-2xl font-bold">Payments - Coming Soon</div>} />
-                  <Route path="/content" element={<div className="text-2xl font-bold">Content Management - Coming Soon</div>} />
-                  <Route path="/reports" element={<div className="text-2xl font-bold">Reports & Analytics - Coming Soon</div>} />
-                  <Route path="/notifications" element={<div className="text-2xl font-bold">Notifications - Coming Soon</div>} />
+                  <Route path="/payments" element={<Payment />} />
+                  <Route path="/reports" element={<Reports/>} />
                   <Route path="/settings" element={<Settings />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>

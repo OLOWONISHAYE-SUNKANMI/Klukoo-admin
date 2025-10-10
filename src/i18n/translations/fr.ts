@@ -145,5 +145,33 @@ export const fr = {
         pending: 'En attente',
         completed: 'Complété',
       },
+      tableHead: {
+          header: 'Tous les rendez-vous',
+          searchPlaceholder: 'Rechercher des rendez-vous...',
+          statusFilter: 'Tous les statuts',
+          moreFilters: 'Plus de filtres',
+          patient: 'Malades',
+          doctor: 'Médecin',
+          date: 'Date',
+          time: 'Temps',
+          type: 'Taper',
+          status: 'Statut',
+          actions: 'Actes',
+          view: 'Voir',
+          scheduled: 'Prévu',
+          confirmed: 'Confirmé',
+          pending: 'En attente',
+          completed: 'Complété',
+          cancelled: 'Annulé',
+          consulation: 'Consultation',
+          followUp: 'Suivi',
+          teleconsultation: 'Téléconsultation',
+          reschedule: 'Reprogrammer',
+          cancel: 'Annuler',
+          markCompleted: 'Marquer comme terminé',
+      },
+    
+       
+    
     },
  };
