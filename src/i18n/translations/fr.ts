@@ -78,6 +78,7 @@ export const fr = {
       mainBody: {
         title: 'Tous les patients',
         searchPlaceholder: 'Rechercher des patients...',
+        button: 'Filtrer',
       },
       tableHead: {
         name: 'Nom',
@@ -87,7 +88,90 @@ export const fr = {
         lastVisit: 'Dernière visite',
         appointments: 'Rendez-vous',
         actions: 'Actions',
-      }
+      },
+        dropdownMenu: {
+        viewProfile: 'Voir le profil',
+        editDetails: 'Modifier',
+        deactivate: 'Bloc',
+      },
     },
 
+     // Doctor Page
+    doctorPage: {
+      header: {
+        title: 'Gestion des médecins',
+        subtitle: 'Afficher et gérer tous les médecins inscrits',
+        button: 'Ajouter un médecin',
+      },
+      mainBody: {
+        totalDoctors: 'Total Médecins',
+        pendingApprovals: 'Approbations en attente',
+        avgRating: 'Note moyenne',
+      }, 
+      nextSection: {
+        title: 'Tous les médecins',
+        searchPlaceholder: 'Rechercher des médecins...',
+        button: 'Filtre',
+      },
+       tableHead: {
+        name: 'Nom',
+        specialty: 'Spécialité',
+        email: 'E-mail',
+        status: 'Statut',
+        patients: 'Patientes',
+        rating: 'Notation',
+        actions: 'Actes',
+      },
+      dropDownMenu: {
+        viewProfile: 'Voir le profil',
+        edit: 'Modifier',
+        approve: 'Approuver',
+        reject: 'Rejeter',
+        deactivate: 'Désactiver',
+      },
+    },
+
+
+    // Appointment Page
+    appointmentPage: {
+      header: {
+        title: 'Rendez-vous',
+        subtitle: 'Afficher et gérer tous les rendez-vous',
+        button: 'Planifier un rendez-vous',
+      },
+       mainBody: {
+        today: 'Aujourd\'hui',
+        confirmed: 'Confirmé',
+        pending: 'En attente',
+        completed: 'Complété',
+      },
+      tableHead: {
+          header: 'Tous les rendez-vous',
+          searchPlaceholder: 'Rechercher des rendez-vous...',
+          statusFilter: 'Tous les statuts',
+          moreFilters: 'Plus de filtres',
+          patient: 'Malades',
+          doctor: 'Médecin',
+          date: 'Date',
+          time: 'Temps',
+          type: 'Taper',
+          status: 'Statut',
+          actions: 'Actes',
+          view: 'Voir',
+          scheduled: 'Prévu',
+          confirmed: 'Confirmé',
+          pending: 'En attente',
+          completed: 'Complété',
+          cancelled: 'Annulé',
+          consulation: 'Consultation',
+          followUp: 'Suivi',
+          teleconsultation: 'Téléconsultation',
+          reschedule: 'Reprogrammer',
+          cancel: 'Annuler',
+          markCompleted: 'Marquer comme terminé',
+      },
+    
+       
+    
+    },
  };

@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useTranslation } from 'react-i18next';
 
 const doctors = [
   {
@@ -63,18 +64,19 @@ const doctors = [
 ];
 
 export default function Doctors() {
+  const { t } = useTranslation()
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-foreground">Doctor Management</h1>
-          <p className="text-muted-foreground">Manage doctors and approve applications</p>
+          <h1 className="text-3xl font-bold text-foreground">{t('doctorPage.header.title')}</h1>
+          <p className="text-muted-foreground">{t('doctorPage.header.subtitle')}</p>
         </div>
         <Button>
           <UserPlus className="mr-2 h-4 w-4" />
-          Add Doctor
+         {t('doctorPage.header.button')}
         </Button>
       </div>
 
@@ -83,7 +85,7 @@ export default function Doctors() {
           <CardContent className="pt-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-muted-foreground">Total Doctors</p>
+                <p className="text-sm text-muted-foreground">{t('doctorPage.mainBody.totalDoctors')}</p>
                 <p className="mt-1 text-2xl font-bold">47</p>
               </div>
               <CheckCircle className="h-8 w-8 text-success" />
@@ -94,7 +96,7 @@ export default function Doctors() {
           <CardContent className="pt-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-muted-foreground">Pending Approvals</p>
+                <p className="text-sm text-muted-foreground">{t('doctorPage.mainBody.pendingApprovals')}</p>
                 <p className="mt-1 text-2xl font-bold">8</p>
               </div>
               <XCircle className="h-8 w-8 text-warning" />
@@ -105,7 +107,7 @@ export default function Doctors() {
           <CardContent className="pt-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-muted-foreground">Avg Rating</p>
+                <p className="text-sm text-muted-foreground">{t('doctorPage.mainBody.avgRating')}</p>
                 <p className="mt-1 text-2xl font-bold">4.8</p>
               </div>
               <div className="text-2xl">⭐</div>
@@ -116,14 +118,14 @@ export default function Doctors() {
 
       <Card>
         <CardHeader>
-          <CardTitle>All Doctors</CardTitle>
+          <CardTitle>{t('doctorPage.nextSection.title')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="mb-4 flex gap-4">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
-                placeholder="Search doctors..."
+                placeholder={t('doctorPage.nextSection.searchPlaceholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-10"
@@ -131,7 +133,7 @@ export default function Doctors() {
             </div>
             <Button variant="outline">
               <Filter className="mr-2 h-4 w-4" />
-              Filter
+              {t('doctorPage.nextSection.button')}
             </Button>
           </div>
 
@@ -139,13 +141,13 @@ export default function Doctors() {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Name</TableHead>
-                  <TableHead>Specialty</TableHead>
-                  <TableHead>Email</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead>Patients</TableHead>
-                  <TableHead>Rating</TableHead>
-                  <TableHead className="text-right">Actions</TableHead>
+                  <TableHead>{t('doctorPage.tableHead.name')}</TableHead>
+                  <TableHead>{t('doctorPage.tableHead.specialty')}</TableHead>
+                  <TableHead>{t('doctorPage.tableHead.email')}</TableHead>
+                  <TableHead>{t('doctorPage.tableHead.status')}</TableHead>
+                  <TableHead>{t('doctorPage.tableHead.patients')}</TableHead>
+                  <TableHead>{t('doctorPage.tableHead.rating')}</TableHead>
+                  <TableHead className="text-right">{t('doctorPage.tableHead.actions')}</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -169,15 +171,15 @@ export default function Doctors() {
                           </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
-                          <DropdownMenuItem>View Profile</DropdownMenuItem>
-                          <DropdownMenuItem>Edit</DropdownMenuItem>
+                          <DropdownMenuItem>{t('doctorPage.dropDownMenu.viewProfile')}</DropdownMenuItem>
+                          <DropdownMenuItem>{t('doctorPage.dropDownMenu.edit')}</DropdownMenuItem>
                           {doctor.status === "pending" && (
                             <>
-                              <DropdownMenuItem>Approve</DropdownMenuItem>
-                              <DropdownMenuItem>Reject</DropdownMenuItem>
+                              <DropdownMenuItem>{t('doctorPage.dropDownMenu.approve')}</DropdownMenuItem>
+                              <DropdownMenuItem>{t('doctorPage.dropDownMenu.reject')}</DropdownMenuItem>
                             </>
                           )}
-                          <DropdownMenuItem>Deactivate</DropdownMenuItem>
+                          <DropdownMenuItem>{t('doctorPage.dropDownMenu.deactivate')}</DropdownMenuItem>
                         </DropdownMenuContent>
                       </DropdownMenu>
                     </TableCell>

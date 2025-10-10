@@ -58,21 +58,13 @@ export function AdminSidebar() {
     icon: CreditCard,
     url: "/payments",
   },
-  {
-    title: t('adminSiderbar.content'),
-    icon: FileText,
-    url: "/content",
-  },
+ 
   {
     title: t('adminSiderbar.reports'),
     icon: BarChart3,
     url: "/reports",
   },
-  {
-    title: t('adminSiderbar.notifications'),
-    icon: Bell,
-    url: "/notifications",
-  },
+  
   {
     title: t('adminSiderbar.settings'),
     icon: Settings,

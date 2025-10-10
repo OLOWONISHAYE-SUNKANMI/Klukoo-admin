@@ -79,7 +79,9 @@ export const en = {
         mainBody: {
         title: 'All Patients',
         searchPlaceholder: 'Search patients...',
+        button: 'Filter',
       },
+
       tableHead: {
         name: 'Name',
         email: 'Email',
@@ -88,6 +90,86 @@ export const en = {
         lastVisit: 'Last Visit',
         appointments: 'Appointments',
         actions: 'Actions',
+      },
+      dropdownMenu: {
+        viewProfile: 'View Profile',
+        editDetails: 'Edit',
+        deactivate: 'Block',
+      },
+    },
+
+    // Doctor Page
+    doctorPage: {
+      header: {
+        title: 'Doctor Management',
+        subtitle: 'View and manage all registered doctors',
+        button: 'Add Doctor',
+      },
+      mainBody: {
+        totalDoctors: 'Total Doctors',
+        pendingApprovals: 'Pending Approvals',
+        avgRating: 'Average Rating',
+      },
+        nextSection: {
+        title: 'All Doctors',
+        searchPlaceholder: 'Search doctors...',
+        button: 'Filter',
+      },
+      tableHead: {
+        name: 'Name',
+        specialty: 'Specialty',
+        email: 'Email',
+        status: 'Status',
+        patients: 'Patients',
+        rating: 'Rating',
+        actions: 'Actions',
+      },
+      dropDownMenu: {
+        viewProfile: 'View Profile',
+        edit: 'Edit',
+        approve: 'Approve',
+        reject: 'Reject',
+        deactivate: 'Deactivate',
+      },
+    },
+
+     // Appointment Page
+    appointmentPage: {
+      header: {
+        title: 'Appointment',
+        subtitle: 'View and manage all appointments',
+        button: ' Schedule Appointment',
+      },
+       mainBody: {
+        today: 'Today',
+        confirmed: 'Confirmed',
+        pending: 'Pending',
+        completed: 'Completed',
+      },
+      tableHead: {
+          header: 'All Appointments',
+          searchPlaceholder: 'Search appointments...',
+          statusFilter: 'All Status',
+          moreFilters: 'More Filters',
+          patient: 'Patients',
+          doctor: 'Doctor',
+          date: 'Date',
+          time: 'Time',
+          type: 'Type',
+          status: 'Status',
+          actions: 'Actions',
+          view: 'View',
+          confirmed: 'Confirmed',
+          pending: 'Pending',
+          completed: 'Completed',
+          cancelled: 'Cancelled',
+          scheduled: 'Scheduled',
+          consulation: 'Consultation',
+          followUp: 'Follow-up',
+          teleconsultation: 'Teleconsultation',
+          reschedule: 'Reschedule',
+          cancel: 'Cancel',
+          markCompleted: 'Mark as Completed',
       },
     },
 
