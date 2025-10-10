@@ -11,6 +11,7 @@ export const en = {
     'The first smart application in Africa that helps diabetic patients live better, anticipate better, and respond better.',
 
 
+
     //Admin Dashbboard Title
     AdminDashboard: {
       title: 'Admin Dashboard',
@@ -172,5 +173,16 @@ export const en = {
           markCompleted: 'Mark as Completed',
       },
     },
+
+  // Admin Sign in Page 
+  signInPage: {
+    title: 'Sign in to your account',
+    email: 'Email Address',
+    password: 'Password',
+    button: 'Sign in',
+    response: 'Signing in...',
+    welcome: 'Welcome to',
+    klukoo: 'Klukoo Admin Panel',
+  }
 
  };
