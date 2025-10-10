@@ -1,5 +1,6 @@
 
 import { RevenueChart } from "@/components/dashboard/RevenueChart";
+import { table } from "console";
 import { set } from "date-fns";
 import { permission } from "process";
 
@@ -183,4 +184,47 @@ export const fr = {
         welcome: 'Bienvenue à',
         klukoo: 'Panneau d\'administration de Klukoo'
   },
+
+   // Payment Page 
+   paymentPage: {
+      header: {
+        title: 'Paiement et finances',
+        subtitle: 'Gérer les transactions, la facturation et les rapports financiers',
+        button: 'Exporter des rapports'
+      },
+       mainBody: {
+        totalRevenue: 'Revenu total',
+        pendingPayments: 'Paiements en attente',
+        doctorCommissions: 'Commissions de médecins',
+        refundsIssued: 'Remboursements',
+        lastmonth: ' du mois dernier',
+        transactions: 'transactions',
+        ofrevenue: 'de revenus',
+        refundRate: 'Taux de remboursement',
+        revenueOverview: 'Aperçu des revenus',
+          graph: {
+          graphRevenue: 'Revenu',
+          commissions: 'Commissions',
+          refunds: 'Remboursements',
+        },
+        tableHead: {
+            tabs: {
+              transactions: 'Transactions',
+              doctorPayouts: 'Paiements des médecins',
+              finance: 'Analyse financière',
+            },
+            
+        },
+        tableMain: {
+          title: 'Transactions récentes',
+          placeholder: 'Rechercher des transactions...',
+          statusFilter: 'Tous les statuts',
+          completed: 'Complété',
+          pending: 'En attente',
+          refunded: 'Remboursé',
+        },
+
+    },   
+   },
+
  };

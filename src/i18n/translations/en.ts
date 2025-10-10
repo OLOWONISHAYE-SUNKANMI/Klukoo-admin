@@ -183,6 +183,49 @@ export const en = {
     response: 'Signing in...',
     welcome: 'Welcome to',
     klukoo: 'Klukoo Admin Panel',
-  }
+  },
+ 
+   // Payment Page 
+   paymentPage: {
+      header: {
+        title: 'Payment & Finances',
+        subtitle: 'Manage transactions, billing, and financial reports',
+        button: 'Export Reports'
+      },
+    mainBody: {
+        totalRevenue: 'Total Revenue',
+        pendingPayments: 'Pending Payments',
+        doctorCommissions: 'Doctor Commissions',
+        refundsIssued: 'Refunds',
+        lastmonth: ' from last month',
+        transactions: 'transactions',
+        ofrevenue: 'of revenue',
+        refundRate: 'Refund Rate',
+        revenueOverview: 'Revenue Overview',
+        graph: {
+          graphRevenue: 'Revenue',
+          commissions: 'Commissions',
+          refunds: 'Refunds',
+        },
+        tableHead: {
+            tabs: {
+              transactions: 'Transactions',
+              doctorPayouts: 'Doctor Payouts',
+              finance: 'Finance Analytics',
+            },
+        },
+
+        tableMain: {
+          header: 'Recents Transactions',
+          placeholder: 'Search transactions...',
+          statusFilter: 'All Status',
+          completed: 'Completed',
+          pending: 'Pending',
+          refunded: 'Refunded',
+        },
+
+    },         
+  },
+
 
  };
