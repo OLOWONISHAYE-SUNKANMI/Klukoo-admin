@@ -32,6 +32,7 @@ import {
   Legend,
 } from "recharts";
 import { DollarSign, TrendingUp, CreditCard, Download, Search, Filter } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const revenueData = [
   { month: "Jan", revenue: 12000, commissions: 3600, refunds: 450 },
@@ -135,6 +136,7 @@ const doctorPayoutsData = [
 ];
 
 export default function Payments() {
+  const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
 
@@ -160,69 +162,69 @@ export default function Payments() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold">Payments & Finances</h1>
+          <h1 className="text-3xl font-bold">{t('paymentPage.header.title')}</h1>
           <p className="text-muted-foreground mt-1">
-            Manage transactions, billing, and financial reports
+            {t('paymentPage.header.subtitle')}
           </p>
         </div>
         <Button>
           <Download className="mr-2 h-4 w-4" />
-          Export Report
+          {t('paymentPage.header.button')}
         </Button>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('paymentPage.mainBody.totalRevenue')}</CardTitle>
             <DollarSign className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">$28,000</div>
             <p className="text-xs text-success flex items-center gap-1 mt-1">
               <TrendingUp className="h-3 w-3" />
-              +12% from last month
+              +12% {t('paymentPage.mainBody.lastmonth')}
             </p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Pending Payments</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('paymentPage.mainBody.pendingPayments')}</CardTitle>
             <CreditCard className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">$3,240</div>
-            <p className="text-xs text-muted-foreground mt-1">18 transactions</p>
+            <p className="text-xs text-muted-foreground mt-1">18 {t('paymentPage.mainBody.transactions')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Doctor Commissions</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('paymentPage.mainBody.doctorCommissions')}</CardTitle>
             <DollarSign className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">$8,400</div>
-            <p className="text-xs text-muted-foreground mt-1">30% of revenue</p>
+            <p className="text-xs text-muted-foreground mt-1">30% {t('paymentPage.mainBody.ofrevenue')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Refunds</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('paymentPage.mainBody.refundsIssued')}</CardTitle>
             <TrendingUp className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">$420</div>
-            <p className="text-xs text-muted-foreground mt-1">1.5% refund rate</p>
+            <p className="text-xs text-muted-foreground mt-1">1.5% {t('paymentPage.mainBody.refundRate')}</p>
           </CardContent>
         </Card>
       </div>
 
       <Card>
         <CardHeader>
-          <CardTitle>Revenue Overview</CardTitle>
+          <CardTitle>{t('paymentPage.mainBody.revenueOverview')}</CardTitle>
         </CardHeader>
         <CardContent>
           <ResponsiveContainer width="100%" height={300}>
@@ -243,21 +245,21 @@ export default function Payments() {
                 dataKey="revenue"
                 stroke="hsl(var(--primary))"
                 strokeWidth={2}
-                name="Revenue"
+                name= {t('paymentPage.mainBody.graph.graphRevenue')}
               />
               <Line
                 type="monotone"
                 dataKey="commissions"
                 stroke="hsl(var(--success))"
                 strokeWidth={2}
-                name="Commissions"
+                name={t('paymentPage.mainBody.graph.commissions')}
               />
               <Line
                 type="monotone"
                 dataKey="refunds"
                 stroke="hsl(var(--destructive))"
                 strokeWidth={2}
-                name="Refunds"
+                name={t('paymentPage.mainBody.graph.refunds')}
               />
             </LineChart>
           </ResponsiveContainer>
@@ -266,21 +268,21 @@ export default function Payments() {
 
       <Tabs defaultValue="transactions" className="space-y-4">
         <TabsList>
-          <TabsTrigger value="transactions">Transactions</TabsTrigger>
-          <TabsTrigger value="payouts">Doctor Payouts</TabsTrigger>
-          <TabsTrigger value="analytics">Financial Analytics</TabsTrigger>
+          <TabsTrigger value="transactions">{t('paymentPage.mainBody.tableHead.tabs.transactions')}</TabsTrigger>
+          <TabsTrigger value="payouts">{t('paymentPage.mainBody.tableHead.tabs.doctorPayouts')}</TabsTrigger>
+          <TabsTrigger value="analytics">{t('paymentPage.mainBody.tableHead.tabs.finance')}</TabsTrigger>
         </TabsList>
 
         <TabsContent value="transactions" className="space-y-4">
           <Card>
             <CardHeader>
               <div className="flex items-center justify-between">
-                <CardTitle>Recent Transactions</CardTitle>
+                <CardTitle>{t('paymentPage.mainBody.tableMain.title')}</CardTitle>
                 <div className="flex items-center gap-2">
                   <div className="relative">
                     <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
                     <Input
-                      placeholder="Search transactions..."
+                      placeholder={t('paymentPage.mainBody.tableMain.placeholder')}
                       className="pl-8 w-64"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
@@ -292,7 +294,7 @@ export default function Payments() {
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="all">All Status</SelectItem>
+                      <SelectItem value="all">{t('paymentPage.mainBody.tableMain.statusFilter')}</SelectItem>
                       <SelectItem value="completed">Completed</SelectItem>
                       <SelectItem value="pending">Pending</SelectItem>
                       <SelectItem value="refunded">Refunded</SelectItem>
