@@ -246,7 +246,47 @@ export const fr = {
           refunded: 'Remboursé',
         },
 
+        barChart: {
+          title: 'Répartition mensuelle',
+          revenue: 'Revenu',
+          commissions: 'Commissions',
+          refunds: 'Remboursements',
+        },
+
     },   
+
    },
+
+      // Reports Page
+    reportsPage: {
+
+      header: {
+              title: 'Rapports et analyses',
+      subtitle: 'Informations complètes et indicateurs de performance',
+      },
+      overview: {
+        users: 'Utilisateurs actifs quotidiens',
+        session: 'Durée moyenne des sessions',
+        update: 'Disponibilité du système',
+        retention: 'Rétention des utilisateurs',
+      },
+
+      graph: {
+        tabs: {
+          usage: 'Métriques d\'utilisation',
+          doctorPerformance: 'Performance du médecin',
+          patientAnalytics: 'Analyse des patients',
+          systemHealth: 'Santé du système',
+        },
+        header: {
+          usage: 'Tendances d\'utilisation hebdomadaires',
+          topDoctors: 'Médecins les plus performants',
+          patientGrowth: 'Croissance et rétention des patients',
+          systemStatus: 'Disponibilité du système',
+          recentSystemLogs: 'Journaux système récents',
+        },
+      }
+
+    },
 
  };

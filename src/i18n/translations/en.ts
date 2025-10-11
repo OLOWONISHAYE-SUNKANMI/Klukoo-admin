@@ -245,8 +245,46 @@ export const en = {
           refunded: 'Refunded',
         },
 
+        barChart: {
+          title: 'Monthly Breakdown',
+          revenue: 'Revenue',
+          commissions: 'Commissions',
+          refunds: 'Refunds',
+        }
+
     },         
   },
 
+   // Reports Page
+    reportsPage: {
+      
+      header: {
+        title: 'Reports & Analytics',
+      subtitle: 'Comprehensive insights and performance metrics',
+      },
+     
+      overview: {
+        users: 'Daily Active Users',
+        session: 'Avg. Session Time',
+        update: 'System Uptime',
+        retention: 'User Retention',
+      },
+
+      graph: {
+        tabs: {
+          usage: 'Usage Metrics',
+          doctorPerformance: 'Doctor Performance',
+          patientAnalytics: 'Patient Analytics',
+          systemHealth: 'System Health',
+        },
+        header: {
+          usage: 'Weekly Usage Trends',
+          topDoctors: 'Top Performing Doctors',
+          patientGrowth: 'Patient Growth & Retention',
+          systemStatus: 'System Uptime',
+          recentSystemLogs: 'Recent System Logs',
+        }
+      },
+    },
 
  };

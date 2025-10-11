@@ -16,6 +16,7 @@ import {
   Legend,
 } from "recharts";
 import { Activity, TrendingUp, Users, Clock } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const usageData = [
   { date: "Mon", activeUsers: 245, newUsers: 32, sessions: 412 },
@@ -52,19 +53,22 @@ const systemHealthData = [
 const COLORS = ["hsl(var(--success))", "hsl(var(--destructive))"];
 
 export default function Reports() {
+
+  const { t } = useTranslation();
+
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold">Reports & Analytics</h1>
+        <h1 className="text-3xl font-bold">{t('reportsPage.header.title')}</h1>
         <p className="text-muted-foreground mt-1">
-          Comprehensive insights and performance metrics
+          {t('reportsPage.header.subtitle')}
         </p>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Daily Active Users</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('reportsPage.overview.users')}</CardTitle>
             <Users className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
@@ -78,7 +82,7 @@ export default function Reports() {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Avg Session Time</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('reportsPage.overview.session')}</CardTitle>
             <Clock className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
@@ -92,7 +96,7 @@ export default function Reports() {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">System Uptime</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('reportsPage.overview.update')}</CardTitle>
             <Activity className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
@@ -103,7 +107,7 @@ export default function Reports() {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">User Retention</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('reportsPage.overview.retention')}</CardTitle>
             <TrendingUp className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
@@ -118,16 +122,16 @@ export default function Reports() {
 
       <Tabs defaultValue="usage" className="space-y-4">
         <TabsList>
-          <TabsTrigger value="usage">Usage Metrics</TabsTrigger>
-          <TabsTrigger value="doctors">Doctor Performance</TabsTrigger>
-          <TabsTrigger value="patients">Patient Analytics</TabsTrigger>
-          <TabsTrigger value="system">System Health</TabsTrigger>
+          <TabsTrigger value="usage">{t('reportsPage.graph.tabs.usage')}</TabsTrigger>
+          <TabsTrigger value="doctors">{t('reportsPage.graph.tabs.doctorPerformance')}</TabsTrigger>
+          <TabsTrigger value="patients">{t('reportsPage.graph.tabs.patientAnalytics')}s</TabsTrigger>
+          <TabsTrigger value="system">{t('reportsPage.graph.tabs.systemHealth')}</TabsTrigger>
         </TabsList>
 
         <TabsContent value="usage" className="space-y-4">
           <Card>
             <CardHeader>
-              <CardTitle>Weekly Usage Trends</CardTitle>
+              <CardTitle>{t('reportsPage.graph.header.usage')}</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={350}>
@@ -173,7 +177,7 @@ export default function Reports() {
         <TabsContent value="doctors" className="space-y-4">
           <Card>
             <CardHeader>
-              <CardTitle>Top Performing Doctors</CardTitle>
+              <CardTitle>{t('reportsPage.graph.header.topDoctors')}</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={350}>
@@ -224,7 +228,7 @@ export default function Reports() {
         <TabsContent value="patients" className="space-y-4">
           <Card>
             <CardHeader>
-              <CardTitle>Patient Growth & Retention</CardTitle>
+              <CardTitle>{t('reportsPage.graph.header.patientGrowth')}</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={350}>

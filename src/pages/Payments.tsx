@@ -383,7 +383,7 @@ export default function Payments() {
         <TabsContent value="analytics" className="space-y-4">
           <Card>
             <CardHeader>
-              <CardTitle>Monthly Breakdown</CardTitle>
+              <CardTitle>{t('paymentPage.mainBody.barChart.title')}</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={350}>
@@ -399,9 +399,9 @@ export default function Payments() {
                     }}
                   />
                   <Legend />
-                  <Bar dataKey="revenue" fill="hsl(var(--primary))" name="Revenue" />
-                  <Bar dataKey="commissions" fill="hsl(var(--success))" name="Commissions" />
-                  <Bar dataKey="refunds" fill="hsl(var(--destructive))" name="Refunds" />
+                  <Bar dataKey="revenue" fill="hsl(var(--primary))" name={t('paymentPage.mainBody.barChart.revenue')} />
+                  <Bar dataKey="commissions" fill="hsl(var(--success))" name={t('paymentPage.mainBody.barChart.commissions')} />
+                  <Bar dataKey="refunds" fill="hsl(var(--destructive))" name={t('paymentPage.mainBody.barChart.refunds')} />
                 </BarChart>
               </ResponsiveContainer>
             </CardContent>
