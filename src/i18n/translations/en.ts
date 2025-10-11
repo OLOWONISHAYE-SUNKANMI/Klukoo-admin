@@ -1,6 +1,7 @@
 
 import { RevenueChart } from "@/components/dashboard/RevenueChart";
 import { set } from "date-fns";
+import { Currency } from "lucide-react";
 import { permission } from "process";
 
 export const en = {
@@ -245,8 +246,109 @@ export const en = {
           refunded: 'Refunded',
         },
 
+        barChart: {
+          title: 'Monthly Breakdown',
+          revenue: 'Revenue',
+          commissions: 'Commissions',
+          refunds: 'Refunds',
+        }
+
     },         
   },
 
+   // Reports Page
+    reportsPage: {
+      
+      header: {
+        title: 'Reports & Analytics',
+      subtitle: 'Comprehensive insights and performance metrics',
+      },
+     
+      overview: {
+        users: 'Daily Active Users',
+        session: 'Avg. Session Time',
+        update: 'System Uptime',
+        retention: 'User Retention',
+      },
+
+      graph: {
+        tabs: {
+          usage: 'Usage Metrics',
+          doctorPerformance: 'Doctor Performance',
+          patientAnalytics: 'Patient Analytics',
+          systemHealth: 'System Health',
+        },
+        header: {
+          usage: 'Weekly Usage Trends',
+          topDoctors: 'Top Performing Doctors',
+          patientGrowth: 'Patient Growth & Retention',
+          systemStatus: 'System Uptime',
+          recentSystemLogs: 'Recent System Logs',
+          consult: 'Consultations',
+          ratings: 'Rating',
+          cancel: 'Cancellations',
+          newPatients: 'New Patients',
+          activePatients: 'Active Patients',
+          retention: 'Retention %',
+
+          systemLogs: {
+            database: 'Database backup completed',
+            response: 'High API response time detected',
+            patch: 'Security patch applied',
+            update: 'System update completed'
+          },
+        },
+      },
+    },
+
+
+    // Settings Page
+    settingsPage: {
+      header: {
+        title: 'Settings',
+        subtitle: 'Manage your admin account and system settings',
+      },
+      profileInformation: {
+        title: 'Profile Information',
+        subtitle: 'Update your personal details',
+        input: {
+          name: 'Full Name',
+          email: 'Email',
+          phone: 'Phone',
+          save: 'Save Changes'
+        },
+      },
+
+      changePassword: {
+        title: 'Change Password', 
+        subtitle: 'Update your password',
+        input: {
+          currentPassword: 'Current Password',
+          newPassword: 'New Password',
+          confirmPassword: 'Confirm Password',
+          updatePassword: 'Update Password'
+        },
+      },
+
+      appSettings: {
+        title: 'App Settings',
+        subtitle: 'Configure system preferences',
+        emailNotifications: 'Email Notifications',
+        subEmailNotifications: 'Recieve email updates',
+        autoApprove: 'Auto-approve Appointments',
+        subAutoApprove: 'Automatically confirm bookings',
+        maintenanceMode: 'Maintenance Mode',
+        userAccess: 'Disable user access',
+      },
+
+      paymentSettings: {
+        title: 'Payment Settings',
+        subtitle: 'Configure payment options',
+        currency: 'Currency',
+        consultationFee: 'Consultation Fee',
+        taxRate: 'Tax Rate',
+        saveSettings: 'Save Settings',
+      },
+    },
 
  };

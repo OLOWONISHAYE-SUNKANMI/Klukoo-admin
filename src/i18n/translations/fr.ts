@@ -246,7 +246,113 @@ export const fr = {
           refunded: 'Remboursé',
         },
 
+        barChart: {
+          title: 'Répartition mensuelle',
+          revenue: 'Revenu',
+          commissions: 'Commissions',
+          refunds: 'Remboursements',
+        },
+
     },   
+
    },
+
+      // Reports Page
+    reportsPage: {
+
+      header: {
+              title: 'Rapports et analyses',
+      subtitle: 'Informations complètes et indicateurs de performance',
+      },
+      overview: {
+        users: 'Utilisateurs actifs quotidiens',
+        session: 'Durée moyenne des sessions',
+        update: 'Disponibilité du système',
+        retention: 'Rétention des utilisateurs',
+      },
+
+      graph: {
+        tabs: {
+          usage: 'Métriques d\'utilisation',
+          doctorPerformance: 'Performance du médecin',
+          patientAnalytics: 'Analyse des patients',
+          systemHealth: 'Santé du système',
+        },
+        header: {
+          usage: 'Tendances d\'utilisation hebdomadaires',
+          topDoctors: 'Médecins les plus performants',
+          patientGrowth: 'Croissance et rétention des patients',
+          systemStatus: 'Disponibilité du système',
+          recentSystemLogs: 'Journaux système récents',
+          consult: 'Consultations',
+          ratings: 'Notation',
+          cancel: 'Annulations',
+          newPatients: 'Nouveaux patients',
+          activePatients: 'Patients actifs',
+          retention: 'Rétention %',
+
+          systemLogs: {
+            database: 'Sauvegarde de la base de données terminée',
+            response: 'Temps de réponse API élevé détecté',
+            patch: 'Correctif de sécurité appliqué',
+            update: 'Mise à jour du système terminée'
+          },
+
+        },
+           
+      }
+
+    },
+
+     // Settings Page
+    settingsPage: {
+      header: {
+        title: 'Paramètres',
+        subtitle: 'Gérez votre compte administrateur et les paramètres système',
+      },
+      profileInformation: {
+        title: 'Informations sur le profil',
+        subtitle: 'Mettez à jour vos informations personnelles',
+         input: {
+          name: 'Nom et prénom',
+          email: 'E-mail',
+          phone: 'Téléphone',
+          save: 'Enregistrer les modifications'
+          },
+        },
+
+      changePassword: {
+        title: 'Changer le mot de passe', 
+        subtitle: 'Mettez à jour votre mot de passe',
+        input: {
+          currentPassword: 'Mot de passe actuel',
+          newPassword: 'Nouveau mot de passe',
+          confirmPassword: 'Confirmez le mot de passe',
+          updatePassword: 'Mettre à jour le mot de passe',  
+        },
+      },
+      
+      appSettings: {
+        title: 'Paramètres de l\'application',
+        subtitle: 'Configurer les préférences système',
+        emailNotifications: 'Notifications par courrier électronique',
+        subEmailNotifications: 'Recevoir des mises à jour par e-mail',
+        autoApprove: 'Approbation automatique des rendez-vous',
+        subAutoApprove: 'Confirmer automatiquement les réservations',
+        maintenanceMode: 'Mode d\'entretien',
+        userAccess: 'Désactiver l\'accès des utilisateurs',
+      },
+      paymentSettings: {
+        title: 'Paramètres de paiement',
+        subtitle: 'Configurer les options de paiement',
+        currency: 'Devise',
+        consultationFee: 'Frais de consultation',
+        taxRate: 'Taux d\'imposition',
+        saveSettings: 'Enregistrer les paramètres',
+      },
+
+      
+    },
+
 
  };

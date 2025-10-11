@@ -34,7 +34,11 @@ function ProtectedRoute({ children }: { children: JSX.Element }) {
     checkSession();
   }, []);
 
-  if (loading) return <div className="text-center mt-10">Loading...</div>;
+  if (loading) return 
+    <div className="flex justify-center items-center mt-10">
+      <div className="w-10 h-10 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
+    </div>
+  ;
   if (!session) return <Navigate to="/login" replace />;
 
   return children;
