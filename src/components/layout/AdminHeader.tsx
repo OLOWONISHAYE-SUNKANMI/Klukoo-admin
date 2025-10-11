@@ -18,6 +18,8 @@ export function AdminHeader() {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
+ 
+
   const handleLogout = async () => {
     await supabase.auth.signOut(); // Clear Supabase session
     navigate("/login"); // Redirect to login page

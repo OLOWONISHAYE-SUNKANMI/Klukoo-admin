@@ -124,7 +124,7 @@ export default function Reports() {
         <TabsList>
           <TabsTrigger value="usage">{t('reportsPage.graph.tabs.usage')}</TabsTrigger>
           <TabsTrigger value="doctors">{t('reportsPage.graph.tabs.doctorPerformance')}</TabsTrigger>
-          <TabsTrigger value="patients">{t('reportsPage.graph.tabs.patientAnalytics')}s</TabsTrigger>
+          <TabsTrigger value="patients">{t('reportsPage.graph.tabs.patientAnalytics')}</TabsTrigger>
           <TabsTrigger value="system">{t('reportsPage.graph.tabs.systemHealth')}</TabsTrigger>
         </TabsList>
 
@@ -193,8 +193,8 @@ export default function Reports() {
                     }}
                   />
                   <Legend />
-                  <Bar dataKey="consultations" fill="hsl(var(--primary))" name="Consultations" />
-                  <Bar dataKey="cancellations" fill="hsl(var(--destructive))" name="Cancellations" />
+                  <Bar dataKey="consultations" fill="hsl(var(--primary))" name={t('reportsPage.graph.header.consult')} />
+                  <Bar dataKey="cancellations" fill="hsl(var(--destructive))" name={t('reportsPage.graph.header.cancel')} />
                 </BarChart>
               </ResponsiveContainer>
             </CardContent>
@@ -208,15 +208,15 @@ export default function Reports() {
                 </CardHeader>
                 <CardContent className="space-y-2">
                   <div className="flex justify-between">
-                    <span className="text-sm text-muted-foreground">Consultations</span>
+                    <span className="text-sm text-muted-foreground">{t('reportsPage.graph.header.consult')}</span>
                     <span className="font-semibold">{doctor.consultations}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-sm text-muted-foreground">Rating</span>
+                    <span className="text-sm text-muted-foreground">{t('reportsPage.graph.header.ratings')}</span>
                     <span className="font-semibold">⭐ {doctor.rating}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-sm text-muted-foreground">Cancellations</span>
+                    <span className="text-sm text-muted-foreground">{t('reportsPage.graph.header.cancel')}</span>
                     <span className="font-semibold">{doctor.cancellations}</span>
                   </div>
                 </CardContent>
@@ -249,21 +249,21 @@ export default function Reports() {
                     dataKey="newPatients"
                     stroke="hsl(var(--primary))"
                     strokeWidth={2}
-                    name="New Patients"
+                    name={t('reportsPage.graph.header.newPatients')}
                   />
                   <Line
                     type="monotone"
                     dataKey="activePatients"
                     stroke="hsl(var(--success))"
                     strokeWidth={2}
-                    name="Active Patients"
+                    name={t('reportsPage.graph.header.activePatients')}
                   />
                   <Line
                     type="monotone"
                     dataKey="retention"
                     stroke="hsl(var(--accent))"
                     strokeWidth={2}
-                    name="Retention %"
+                    name={t('reportsPage.graph.header.retention')}
                   />
                 </LineChart>
               </ResponsiveContainer>
@@ -275,7 +275,7 @@ export default function Reports() {
           <div className="grid gap-4 md:grid-cols-2">
             <Card>
               <CardHeader>
-                <CardTitle>System Uptime</CardTitle>
+                <CardTitle>{t('reportsPage.graph.header.systemStatus')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ResponsiveContainer width="100%" height={300}>
@@ -302,35 +302,35 @@ export default function Reports() {
 
             <Card>
               <CardHeader>
-                <CardTitle>Recent System Logs</CardTitle>
+                <CardTitle>{t('reportsPage.graph.header.recentSystemLogs')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3 text-sm">
                     <div className="h-2 w-2 rounded-full bg-success mt-1.5" />
                     <div className="flex-1">
-                      <p className="font-medium">Database backup completed</p>
+                      <p className="font-medium">{t('reportsPage.graph.header.systemLogs.database')}</p>
                       <p className="text-xs text-muted-foreground">2 hours ago</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 text-sm">
                     <div className="h-2 w-2 rounded-full bg-warning mt-1.5" />
                     <div className="flex-1">
-                      <p className="font-medium">High API response time detected</p>
+                      <p className="font-medium">{t('reportsPage.graph.header.systemLogs.response')}</p>
                       <p className="text-xs text-muted-foreground">5 hours ago</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 text-sm">
                     <div className="h-2 w-2 rounded-full bg-success mt-1.5" />
                     <div className="flex-1">
-                      <p className="font-medium">Security patch applied</p>
+                      <p className="font-medium">{t('reportsPage.graph.header.systemLogs.patch')}</p>
                       <p className="text-xs text-muted-foreground">1 day ago</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 text-sm">
                     <div className="h-2 w-2 rounded-full bg-success mt-1.5" />
                     <div className="flex-1">
-                      <p className="font-medium">System update completed</p>
+                      <p className="font-medium">{t('reportsPage.graph.header.systemLogs.update')}</p>
                       <p className="text-xs text-muted-foreground">2 days ago</p>
                     </div>
                   </div>
