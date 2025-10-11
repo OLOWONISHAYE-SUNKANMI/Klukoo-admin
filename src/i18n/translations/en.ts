@@ -224,6 +224,18 @@ export const en = {
             button: 'View',
         },
 
+        doctorTableHead: {
+            doctor: 'Doctor Payouts',
+            payout: 'Payout ID',
+            doc: 'Doctor',
+            docsConsultation: 'Consultation',
+            amount: 'Amount',
+            date: 'Date',
+            status: 'Status',
+            actions: 'Actions', 
+            button: 'View',
+        },
+
         tableMain: {
           title: 'Recent Transactions',
           placeholder: 'Search transactions...',

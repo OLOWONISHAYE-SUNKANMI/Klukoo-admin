@@ -343,19 +343,19 @@ export default function Payments() {
         <TabsContent value="payouts" className="space-y-4">
           <Card>
             <CardHeader>
-              <CardTitle>Doctor Payouts</CardTitle>
+              <CardTitle>{t('paymentPage.mainBody.doctorTableHead.doctor')}</CardTitle>
             </CardHeader>
             <CardContent>
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Payout ID</TableHead>
-                    <TableHead>Doctor</TableHead>
-                    <TableHead>Consultations</TableHead>
-                    <TableHead>Amount</TableHead>
-                    <TableHead>Date</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead>Actions</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.doctorTableHead.payout')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.doctorTableHead.doc')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.doctorTableHead.docsConsultation')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.doctorTableHead.amount')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.doctorTableHead.date')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.doctorTableHead.status')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.doctorTableHead.actions')}</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -369,7 +369,7 @@ export default function Payments() {
                       <TableCell>{getStatusBadge(payout.status)}</TableCell>
                       <TableCell>
                         <Button variant="ghost" size="sm">
-                          View
+                          {t('paymentPage.mainBody.doctorTableHead.button')}
                         </Button>
                       </TableCell>
                     </TableRow>

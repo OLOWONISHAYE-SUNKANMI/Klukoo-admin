@@ -224,6 +224,19 @@ export const fr = {
             button: 'Voir',
             
         },
+
+          doctorTableHead: {
+            doctor: 'Paiements des médecins',
+            payout: 'Identifiant de paiement',
+            doc: 'Médecin',
+            docsConsultation: 'Consultation',
+            amount: 'Montante',
+            date: 'Date',
+            status: 'Statut',
+            actions: 'Actes', 
+            button: 'Voir',
+        },
+
         tableMain: {
           title: 'Transactions récentes',
           placeholder: 'Rechercher des transactions...',
