@@ -213,8 +213,30 @@ export const fr = {
               doctorPayouts: 'Paiements des médecins',
               finance: 'Analyse financière',
             },
+            transaction: 'ID de transaction',
+            patient: 'Patiente',
+            doctor: 'Médecin',
+            amount: 'Montante',
+            method: 'Méthode',
+            date: 'Date',
+            status: 'Statut',
+            actions: 'Actes', 
+            button: 'Voir',
             
         },
+
+          doctorTableHead: {
+            doctor: 'Paiements des médecins',
+            payout: 'Identifiant de paiement',
+            doc: 'Médecin',
+            docsConsultation: 'Consultation',
+            amount: 'Montante',
+            date: 'Date',
+            status: 'Statut',
+            actions: 'Actes', 
+            button: 'Voir',
+        },
+
         tableMain: {
           title: 'Transactions récentes',
           placeholder: 'Rechercher des transactions...',

@@ -295,9 +295,9 @@ export default function Payments() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="all">{t('paymentPage.mainBody.tableMain.statusFilter')}</SelectItem>
-                      <SelectItem value="completed">Completed</SelectItem>
-                      <SelectItem value="pending">Pending</SelectItem>
-                      <SelectItem value="refunded">Refunded</SelectItem>
+                      <SelectItem value="completed">{t('paymentPage.mainBody.tableMain.completed')}</SelectItem>
+                      <SelectItem value="pending">{t('paymentPage.mainBody.tableMain.pending')}</SelectItem>
+                      <SelectItem value="refunded">{t('paymentPage.mainBody.tableMain.refunded')}</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -307,14 +307,14 @@ export default function Payments() {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Transaction ID</TableHead>
-                    <TableHead>Patient</TableHead>
-                    <TableHead>Doctor</TableHead>
-                    <TableHead>Amount</TableHead>
-                    <TableHead>Method</TableHead>
-                    <TableHead>Date</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead>Actions</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.tableHead.transaction')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.tableHead.patient')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.tableHead.doctor')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.tableHead.amount')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.tableHead.method')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.tableHead.date')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.tableHead.status')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.tableHead.actions')}</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -329,7 +329,7 @@ export default function Payments() {
                       <TableCell>{getStatusBadge(transaction.status)}</TableCell>
                       <TableCell>
                         <Button variant="ghost" size="sm">
-                          View
+                         {t('paymentPage.mainBody.tableHead.button')}
                         </Button>
                       </TableCell>
                     </TableRow>
@@ -343,19 +343,19 @@ export default function Payments() {
         <TabsContent value="payouts" className="space-y-4">
           <Card>
             <CardHeader>
-              <CardTitle>Doctor Payouts</CardTitle>
+              <CardTitle>{t('paymentPage.mainBody.doctorTableHead.doctor')}</CardTitle>
             </CardHeader>
             <CardContent>
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Payout ID</TableHead>
-                    <TableHead>Doctor</TableHead>
-                    <TableHead>Consultations</TableHead>
-                    <TableHead>Amount</TableHead>
-                    <TableHead>Date</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead>Actions</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.doctorTableHead.payout')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.doctorTableHead.doc')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.doctorTableHead.docsConsultation')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.doctorTableHead.amount')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.doctorTableHead.date')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.doctorTableHead.status')}</TableHead>
+                    <TableHead>{t('paymentPage.mainBody.doctorTableHead.actions')}</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -369,7 +369,7 @@ export default function Payments() {
                       <TableCell>{getStatusBadge(payout.status)}</TableCell>
                       <TableCell>
                         <Button variant="ghost" size="sm">
-                          View
+                          {t('paymentPage.mainBody.doctorTableHead.button')}
                         </Button>
                       </TableCell>
                     </TableRow>
