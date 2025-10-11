@@ -138,7 +138,7 @@ const Login = () => {
           <div className="flex items-center justify-center">
             <div className="backdrop-blur-sm flex items-center justify-center">
               <img
-                src="https://res.cloudinary.com/depeqzb6z/image/upload/v1757665702/WhatsApp_Image_2025-09-10_%C3%A0_23.51.01_43a85c4a-removebg-preview_jnqaja.png"
+                src="https://res.cloudinary.com/depeqzb6z/image/upload/v1760105889/Klukoo_logo_New_aiyyti.png"
                 alt="Klukoo Logo"
                 className="w-32 h-32"
               />
