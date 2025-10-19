@@ -44,6 +44,11 @@ export function AdminSidebar() {
     url: "/patients",
   },
   {
+    title: t('adminSiderbar.family'),
+    icon: Stethoscope,
+    url: "/family",
+  },
+  {
     title: t('adminSiderbar.doctors'),
     icon: Stethoscope,
     url: "/doctors",
@@ -64,6 +69,13 @@ export function AdminSidebar() {
     icon: BarChart3,
     url: "/reports",
   },
+
+    {
+    title: t('adminSiderbar.notifications'),
+    icon: BarChart3,
+    url: "/notifications",
+  },
+  
   
   {
     title: t('adminSiderbar.settings'),

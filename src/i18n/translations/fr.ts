@@ -34,6 +34,7 @@ export const fr = {
       appointments: 'Rendez-vous',
       payments: 'Paiements',
       content: 'Contenu',
+      family: 'Famille',
       reports: 'Rapports',
       notifications: 'Notifications',
       settings: 'Paramètres',

@@ -14,6 +14,8 @@ import Doctors from "./pages/Doctors";
 import Appointments from "./pages/Appointments";
 import Payments from "./pages/Payments";
 import Reports from "./pages/Reports";
+import Family from './pages/Family';
+import Notifications from './pages/Notifications';
 import Settings from "./pages/Settings";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
@@ -71,6 +73,8 @@ const App = () => (
                           <Route path="/doctors" element={<Doctors />} />
                           <Route path="/appointments" element={<Appointments />} />
                           <Route path="/payments" element={<Payments />} />
+                          <Route path="/family" element={<Family />} />
+                           <Route path="/notifications" element={<Notifications />} />
                           <Route path="/reports" element={<Reports />} />
                           <Route path="/settings" element={<Settings />} />
                           <Route path="*" element={<NotFound />} />
