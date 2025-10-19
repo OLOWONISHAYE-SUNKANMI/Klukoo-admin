@@ -32,6 +32,7 @@ export const en = {
       dashboard: 'Dashboard',
       patients: 'Patients',
       doctors: 'Doctors',
+      family: 'Family',
       appointments: 'Appointments',
       payments: 'Payments',
       content: 'Content',
