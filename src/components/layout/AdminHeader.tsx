@@ -40,7 +40,7 @@ export function AdminHeader() {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-80">
-          <DropdownMenuLabel>{t("adminHeader.notification")}</DropdownMenuLabel>
+          <DropdownMenuLabel>{t("adminHeader.notifications")}</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem>
             <div className="flex flex-col gap-1">
@@ -79,9 +79,7 @@ export function AdminHeader() {
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>Admin Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>Profile</DropdownMenuItem>
           <DropdownMenuItem>Settings</DropdownMenuItem>
-          <DropdownMenuSeparator />
           <DropdownMenuItem onClick={handleLogout}>
             Logout
           </DropdownMenuItem>

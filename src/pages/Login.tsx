@@ -37,7 +37,7 @@ const Login = () => {
       }
 
       // Restrict login to only one admin account
-      if (email !== "skprojects29@gmail.com") {
+      if (email !== "skprojectx12@gmail.com") {
         await supabase.auth.signOut();
         setError("Access denied");
         setLoading(false);
