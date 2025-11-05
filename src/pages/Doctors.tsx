@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Search, Filter, UserPlus, MoreHorizontal, CheckCircle, XCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -19,53 +19,28 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslation } from 'react-i18next';
+import { supabase } from "@/lib/SupabaseClient";
 
-const doctors = [
-  {
-    id: 1,
-    name: "Dr. Robert Smith",
-    specialty: "Endocrinologist",
-    email: "dr.smith@klukoo.com",
-    phone: "+1 234-567-8911",
-    status: "verified",
-    patients: 156,
-    rating: 4.8,
-  },
-  {
-    id: 2,
-    name: "Dr. Emily Johnson",
-    specialty: "General Physician",
-    email: "dr.johnson@klukoo.com",
-    phone: "+1 234-567-8912",
-    status: "verified",
-    patients: 203,
-    rating: 4.9,
-  },
-  {
-    id: 3,
-    name: "Dr. Michael Davis",
-    specialty: "Diabetologist",
-    email: "dr.davis@klukoo.com",
-    phone: "+1 234-567-8913",
-    status: "pending",
-    patients: 0,
-    rating: 0,
-  },
-  {
-    id: 4,
-    name: "Dr. Sarah Martinez",
-    specialty: "Nutritionist",
-    email: "dr.martinez@klukoo.com",
-    phone: "+1 234-567-8914",
-    status: "verified",
-    patients: 89,
-    rating: 4.7,
-  },
-];
+
 
 export default function Doctors() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
+  const [doctors, setDoctors] = useState([]);
+  const [totalDoctors, setTotalDoctors] = useState(0);
+  const [pendingApprovals, setPendingApprovals] = useState(0);
+
+  useEffect(() => {
+    const fetchDoctors = async () => {
+      const { data } = await supabase
+        .from('professional_applications')
+        .select('*');
+      setDoctors(data || []);
+      setTotalDoctors(data?.length || 0);
+      setPendingApprovals(data?.filter(d => !d.verified).length || 0);
+    };
+    fetchDoctors();
+  }, []);
 
   return (
     <div className="space-y-6">
@@ -86,7 +61,7 @@ export default function Doctors() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('doctorPage.mainBody.totalDoctors')}</p>
-                <p className="mt-1 text-2xl font-bold">47</p>
+                <p className="mt-1 text-2xl font-bold">{totalDoctors}</p>
               </div>
               <CheckCircle className="h-8 w-8 text-success" />
             </div>
@@ -97,7 +72,7 @@ export default function Doctors() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('doctorPage.mainBody.pendingApprovals')}</p>
-                <p className="mt-1 text-2xl font-bold">8</p>
+                <p className="mt-1 text-2xl font-bold">{pendingApprovals}</p>
               </div>
               <XCircle className="h-8 w-8 text-warning" />
             </div>
@@ -153,16 +128,16 @@ export default function Doctors() {
               <TableBody>
                 {doctors.map((doctor) => (
                   <TableRow key={doctor.id}>
-                    <TableCell className="font-medium">{doctor.name}</TableCell>
-                    <TableCell>{doctor.specialty}</TableCell>
+                    <TableCell className="font-medium">{`${doctor.first_name} ${doctor.last_name}`}</TableCell>
+                    <TableCell>{doctor.specialty || "N/A"}</TableCell>
                     <TableCell>{doctor.email}</TableCell>
                     <TableCell>
-                      <Badge variant={doctor.status === "verified" ? "default" : "secondary"}>
-                        {doctor.status}
+                      <Badge variant={doctor.verified ? "default" : "secondary"}>
+                        {doctor.verified ? "verified" : "pending"}
                       </Badge>
                     </TableCell>
-                    <TableCell>{doctor.patients}</TableCell>
-                    <TableCell>{doctor.rating > 0 ? `⭐ ${doctor.rating}` : "N/A"}</TableCell>
+                    <TableCell>0</TableCell>
+                    <TableCell>N/A</TableCell>
                     <TableCell className="text-right">
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>

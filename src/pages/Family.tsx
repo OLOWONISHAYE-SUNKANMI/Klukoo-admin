@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,64 +19,35 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Plus, Search, Users, UserCheck, Clock, Phone } from "lucide-react";
+import { supabase } from "@/lib/SupabaseClient";
 
-const familyMembers = [
-  {
-    id: 1,
-    familyId: "FAM001",
-    primaryMember: "John Smith",
-    totalMembers: 4,
-    members: ["John Smith", "Jane Smith", "Tommy Smith", "Sarah Smith"],
-    phone: "+1 234-567-8900",
-    lastVisit: "2024-01-15",
-    status: "active",
-  },
-  {
-    id: 2,
-    familyId: "FAM002",
-    primaryMember: "Michael Johnson",
-    totalMembers: 3,
-    members: ["Michael Johnson", "Emily Johnson", "Lucas Johnson"],
-    phone: "+1 234-567-8901",
-    lastVisit: "2024-01-10",
-    status: "active",
-  },
-  {
-    id: 3,
-    familyId: "FAM003",
-    primaryMember: "Sarah Williams",
-    totalMembers: 5,
-    members: ["Sarah Williams", "David Williams", "Emma Williams", "Oliver Williams", "Sophia Williams"],
-    phone: "+1 234-567-8902",
-    lastVisit: "2024-01-08",
-    status: "active",
-  },
-  {
-    id: 4,
-    familyId: "FAM004",
-    primaryMember: "Robert Davis",
-    totalMembers: 2,
-    members: ["Robert Davis", "Linda Davis"],
-    phone: "+1 234-567-8903",
-    lastVisit: "2023-12-28",
-    status: "inactive",
-  },
-];
+
 
 export default function Family() {
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
+  const [familyMembers, setFamilyMembers] = useState([]);
+
+  useEffect(() => {
+    const fetchFamilyMembers = async () => {
+      const { data } = await supabase
+        .from('family_members')
+        .select('*');
+      setFamilyMembers(data || []);
+    };
+    fetchFamilyMembers();
+  }, []);
 
   const filteredFamilies = familyMembers.filter((family) => {
     const matchesSearch =
-      family.primaryMember.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      family.familyId.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesStatus = statusFilter === "all" || family.status === statusFilter;
+      family.full_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      family.id.toString().toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesStatus = statusFilter === "all" || statusFilter === "active";
     return matchesSearch && matchesStatus;
   });
 
-  const activeCount = familyMembers.filter((f) => f.status === "active").length;
-  const totalPatients = familyMembers.reduce((sum, f) => sum + f.totalMembers, 0);
+  const activeCount = familyMembers.length;
+  const totalPatients = familyMembers.length;
 
   return (
     <div className="space-y-6">
@@ -183,26 +154,26 @@ export default function Family() {
               <TableBody>
                 {filteredFamilies.map((family) => (
                   <TableRow key={family.id}>
-                    <TableCell className="font-medium">{family.familyId}</TableCell>
-                    <TableCell>{family.primaryMember}</TableCell>
+                    <TableCell className="font-medium">{family.id}</TableCell>
+                    <TableCell>{family.full_name}</TableCell>
                     <TableCell>
                       <div className="flex items-center gap-2">
-                        <Badge variant="outline">{family.totalMembers}</Badge>
+                        <Badge variant="outline">1</Badge>
                         <span className="text-xs text-muted-foreground truncate max-w-[200px]">
-                          {family.members.join(", ")}
+                          {family.full_name}
                         </span>
                       </div>
                     </TableCell>
                     <TableCell>
                       <div className="flex items-center gap-1">
                         <Phone className="h-3 w-3 text-muted-foreground" />
-                        {family.phone}
+                        {family.phone || "N/A"}
                       </div>
                     </TableCell>
-                    <TableCell>{family.lastVisit}</TableCell>
+                    <TableCell>{new Date(family.created_at).toLocaleDateString()}</TableCell>
                     <TableCell>
-                      <Badge variant={family.status === "active" ? "default" : "secondary"}>
-                        {family.status}
+                      <Badge variant="default">
+                        active
                       </Badge>
                     </TableCell>
                     <TableCell>

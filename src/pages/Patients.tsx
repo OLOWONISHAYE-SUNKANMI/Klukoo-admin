@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Search, Filter, UserPlus, MoreHorizontal } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -19,54 +19,27 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslation } from 'react-i18next';
+import { supabase } from "@/lib/SupabaseClient";
 
-const patients = [
 
-
-  {
-    id: 1,
-    name: "John Doe",
-    email: "john.doe@email.com",
-    phone: "+1 234-567-8901",
-    status: "active",
-    lastVisit: "2024-10-05",
-    appointments: 12,
-  },
-  {
-    id: 2,
-    name: "Jane Wilson",
-    email: "jane.wilson@email.com",
-    phone: "+1 234-567-8902",
-    status: "active",
-    lastVisit: "2024-10-06",
-    appointments: 8,
-  },
-  {
-    id: 3,
-    name: "Mike Brown",
-    email: "mike.brown@email.com",
-    phone: "+1 234-567-8903",
-    status: "inactive",
-    lastVisit: "2024-09-15",
-    appointments: 5,
-  },
-  {
-    id: 4,
-    name: "Sarah Lee",
-    email: "sarah.lee@email.com",
-    phone: "+1 234-567-8904",
-    status: "active",
-    lastVisit: "2024-10-07",
-    appointments: 15,
-  },
-];
 
 
 
 export default function Patients() {
-
-   const { t } = useTranslation()
+  const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
+  const [patients, setPatients] = useState([]);
+
+  useEffect(() => {
+    const fetchPatients = async () => {
+      const { data } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('role', 'user');
+      setPatients(data || []);
+    };
+    fetchPatients();
+  }, []);
 
  
 
@@ -120,16 +93,16 @@ export default function Patients() {
               <TableBody>
                 {patients.map((patient) => (
                   <TableRow key={patient.id}>
-                    <TableCell className="font-medium">{patient.name}</TableCell>
+                    <TableCell className="font-medium">{`${patient.first_name} ${patient.last_name}`}</TableCell>
                     <TableCell>{patient.email}</TableCell>
                     <TableCell>{patient.phone}</TableCell>
                     <TableCell>
-                      <Badge variant={patient.status === "active" ? "default" : "secondary"}>
-                        {patient.status}
+                      <Badge variant={patient.verified ? "default" : "secondary"}>
+                        {patient.verified ? "verified" : "pending"}
                       </Badge>
                     </TableCell>
-                    <TableCell>{patient.lastVisit}</TableCell>
-                    <TableCell>{patient.appointments}</TableCell>
+                    <TableCell>{new Date(patient.created_at).toLocaleDateString()}</TableCell>
+                    <TableCell>{patient.diabetes_type || "N/A"}</TableCell>
                     <TableCell className="text-right">
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
