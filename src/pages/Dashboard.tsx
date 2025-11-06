@@ -35,14 +35,14 @@ export default function Dashboard() {
 			setTotalUsers(usersResult.count || 0);
 			setTotalDoctors(doctorsResult.count || 0);
 			setTotalConsultations(consultationsResult.count || 0);
-			console.log(
-				"Users:",
-				usersResult.count,
-				"Doctors:",
-				doctorsResult.count,
-				"Consultations:",
-				consultationsResult.count
-			);
+			// console.log(
+			// 	"Users:",
+			// 	usersResult.count,
+			// 	"Doctors:",
+			// 	doctorsResult.count,
+			// 	"Consultations:",
+			// 	consultationsResult.count
+			// );
 		};
 		fetchCounts();
 	}, []);
